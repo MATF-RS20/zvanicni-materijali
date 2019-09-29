@@ -1,5 +1,7 @@
 # Razvoj softvera - Matematički fakultet
 
+<img alt="matf-grb" src="./matf-grb.png">
+
 ## Nastavno osoblje
 - Predavanja
     - [Saša Malkov](http://poincare.matf.bg.ac.rs/~smalkov/)
