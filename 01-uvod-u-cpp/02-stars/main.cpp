@@ -11,7 +11,11 @@ int main()
     // Duzina najduze linije za unte poruke.
     size_t maximum_length = 0;
 
-    // Read line by line
+    // Prva verzija - laksa varijanta, ali postoji mali problem.
+    // Kada se unese EOF, indikator da je unet se aktivira tek
+    // nakon naredbe `getline(std::cin, messages.back())` tako da
+    // petlja ima iteraciju vise.
+    /*
     while (std::cin) {
         messages.push_back(std::string());
 
@@ -20,7 +24,26 @@ int main()
         // istream& getline (istream& is, string& str);
         getline(std::cin, messages.back());
 
-        // Trazimo maximum
+        // Trazimo maksimum.
+        const size_t line_length = messages.back().size();
+        maximum_length = line_length > maximum_length ? line_length : maximum_length;
+    }
+    */
+
+    // Kako bi izbegli problem oko EOF-a, mozemo da drugacije postavimo uslov,
+    // odnosno da pokusamo citanje unutar uslova while petlje. Funkcija `getline`
+    // vraca referencu na ulazni tok koji joj je prosledjen, sto je u ovom slucaju
+    // std::cin, tako da se nakon citanja (i eventualnog pojavljivanja EOF-a) vrsi
+    // provera uslova while petlje.
+    std::string line;
+    while (getline(std::cin, line)) {
+        // Ako smo usli u petlju, dodajemo unetu liniju u poruke.
+        messages.push_back(line);
+
+        // Praznimo pomocni string (efikasna operacija).
+        line.clear();
+
+        // Trazimo maksimum.
         const size_t line_length = messages.back().size();
         maximum_length = line_length > maximum_length ? line_length : maximum_length;
     }
@@ -39,13 +62,10 @@ int main()
     
     // Ispisujemo poruke okruzene zvezdicama.
     for (const auto& line: messages) {
-        // Ignorisemo prazne linije
-        if (!line.empty()) {
-            std::cout
-                << "* " << line
-                << std::string(maximum_length - line.size(), ' ')
-                << " *" << std::endl;
-        }
+        std::cout
+            << "* " << line
+            << std::string(maximum_length - line.size(), ' ')
+            << " *" << std::endl;
     }
 
     // Ispisujemo donji separator.
