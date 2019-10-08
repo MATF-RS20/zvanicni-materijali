@@ -30,7 +30,8 @@ int main()
     std::sort(xs.begin() + 1, xs.end() - 1);
     // Alternativno, i preporuceno, je koristili std::begin i std::end
     // jer su opstiji (u ovom slucaju rade isto). Na primer, ukoliko je xs
-    // pokazivac na dinamicki alociran niz, sledeci kod bi i dalje radio.
+    // staticki-alociran niz ili neka druga kolekcija (koja podrzava operacije begin i end), 
+    // sledeci kod bi i dalje radio.
     // std::sort(std::begin(xs) + 1, std::end(xs) - 1);
 
     // Ispisujemo sadrzaj 
