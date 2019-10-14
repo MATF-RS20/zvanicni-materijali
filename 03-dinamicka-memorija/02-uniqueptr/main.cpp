@@ -21,19 +21,14 @@ struct example_object
     std::string m_text;
 };
 
-void testiraj_pomeranje(const std::unique_ptr<example_object> p)
+void testiraj_promenu_vlasnistva(const std::unique_ptr<example_object> p)
 {
-    std::cout << "U funkciji testiraj_pomeranje: " << p->m_number << " - " << p->m_text << std::endl;
+    std::cout << "U funkciji testiraj_promenu_vlasnistva: " << p->m_number << " - " << p->m_text << std::endl;
 }
 
-void testiraj_pomeranje_po_referenci(const std::unique_ptr<example_object> & p)
+void testiraj_prosledjivanje_pokazivaca_po_referenci(const std::unique_ptr<example_object> & p)
 {
-    std::cout << "U funkciji testiraj_pomeranje_po_referenci: " << p->m_number << " - " << p->m_text << std::endl;
-}
-
-void testiraj_pomeranje_po_r_referenci(std::unique_ptr<example_object> && p)
-{
-    std::cout << "U funkciji testiraj_pomeranje_po_r_referenci: " << p->m_number << " - " << p->m_text << std::endl;
+    std::cout << "U funkciji testiraj_prosledjivanje_pokazivaca_po_referenci: " << p->m_number << " - " << p->m_text << std::endl;
 }
 
 int main()
@@ -42,11 +37,12 @@ int main()
     // u situacijama kada najvise jedan pokazivac moze da sadrzi adresu na neki objekat.
     auto p1 = std::make_unique<example_object>(10, "Ovaj objekat sadrzi broj 10");
     // Kopiranje nije dozvoljeno:
-    //const auto p2(p1); // Konstruktor kopije je obrisan (= delete)
-    //const auto p3 = p2;  // Operator dodele sa semantikom kopiranja je obrisan (= delete)
+    // const auto p2(p1); // Konstruktor kopije je obrisan (= delete)
+    // const auto p3 = p2;  // Operator dodele sa semantikom kopiranja je obrisan (= delete)
 
     std::cout << "p1: " << p1->m_number << " - " << p1->m_text << std::endl;
 
+    std::cout << std::endl;
     std::cout << "Testiramo da li je vlasnistvo prebaceno sa p1 na p2..." << std::endl;
 
     auto p2(std::move(p1));
@@ -66,12 +62,13 @@ int main()
 
     auto p3 = std::move(p2);
     
+    std::cout << std::endl;
     std::cout << "Testiramo prosledjivanje pametnog pokazivaca kao argument funkcije..." << std::endl;
     
     // Naredni poziv proizvodi gresku zato sto se pokusava kopiranje std::unique_ptr objekta
-    //testiraj_pomeranje(p3);
-    testiraj_pomeranje_po_referenci(p3);
-    testiraj_pomeranje_po_r_referenci(std::move(p3));
+    // testiraj_promenu_vlasnistva(p3);
+    // Ali zato naredni poziv uspeva, sa napomenom da ce funkcija preuzeti vlasnistvo objekta
+    testiraj_promenu_vlasnistva(std::move(p3));
 
     if (p3 != nullptr)
     {
@@ -82,10 +79,27 @@ int main()
         std::cout << "p3 je izgubio vlasnistvo nad dinamickim objektom" << std::endl;
     }
 
+    std::cout << std::endl;
     std::cout << "Testiramo promenu vlasnistva pametnog pokazivaca na neki drugi objekat..." << std::endl;
 
     p3 = std::make_unique<example_object>(15, "Ovaj objekat sadrzi broj 15");
     std::cout << "p3: " << p3->m_number << " - " << p3->m_text << std::endl;
+
+    std::cout << std::endl;
+    std::cout << "Testiramo promenu vlasnistva pametnog pokazivaca u funkciji kada se on prenosi po referenci..." << std::endl;
+
+    // Naravno, pokazivac mozemo preneti i po referenci.
+    // U tom slucaju nece doci do prenosa vlasnistva.
+    testiraj_prosledjivanje_pokazivaca_po_referenci(p3);
+
+    if (p3 != nullptr)
+    {
+        std::cout << "p3: " << p3->m_number << " - " << p3->m_text << std::endl;
+    }
+    else
+    {
+        std::cout << "p3 je izgubio vlasnistvo nad dinamickim objektom" << std::endl;
+    }
 
     return 0;
 }

@@ -21,9 +21,9 @@ struct example_object
     std::string m_text;
 };
 
-void testiraj_kopiranje(const std::shared_ptr<example_object> & p)
+void testiraj_kopiranje_pokazivaca(const std::shared_ptr<example_object> p)
 {
-    std::cout << "U funkciji: " << p->m_number << " - " << p->m_text << std::endl;
+    std::cout << "U funkciji testiraj_kopiranje_pokazivaca: " << p->m_number << " - " << p->m_text << std::endl;
 }
 
 int main()
@@ -40,7 +40,7 @@ int main()
     std::cout << "p3: " << p3->m_number << " - " << p3->m_text << std::endl;
 
     std::cout << "Testiramo prosledjivanje pametnog pokazivaca kao argument funkcije..." << std::endl;
-    testiraj_kopiranje(p1);
+    testiraj_kopiranje_pokazivaca(p1);
 
     return 0;
 }
