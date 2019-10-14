@@ -104,3 +104,10 @@ compile_commands.json
 *creator.user*
 
 .clangd/
+
+# -------------------
+# IDEs
+# -------------------
+.vs/
+.vscode/
+CppProperties.json 
