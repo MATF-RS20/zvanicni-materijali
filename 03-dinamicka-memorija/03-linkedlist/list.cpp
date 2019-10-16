@@ -49,7 +49,11 @@ namespace matf
         // cime se taj objekat ostavlja "prazan",
         // odnosno, ne bi ga trebalo koristiti dalje.
         m_start = std::move(other.m_start);
-        m_size = other.m_size; // Ponovo, ovde ne koristimo std::move jer je tip podatka trivijalan
+        // Ponovo, ovde ne koristimo std::move jer je tip podatka trivijalan,
+        // ali moramo da resetujemo broj elemenata u drugoj listi na 0, 
+        // kao u konstruktoru sa semantikom pomeranja.
+        m_size = other.m_size;
+        other.m_size = 0;
         return *this;
     }
 

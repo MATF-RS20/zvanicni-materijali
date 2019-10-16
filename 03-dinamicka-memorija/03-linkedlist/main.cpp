@@ -36,13 +36,29 @@ int main()
     // S obzirom da smo "ukrali" implementaciju ys,
     // u opstem slucaju ne bi trebalo da je koristimo u daljem kodu.
     // Ipak, mi ispisujemo njen sadrzaj da bismo pokazali da
-    // operator dodele sa semantikom pomeranja 
+    // konstruktor sa semantikom pomeranja 
     // zaista "krade" implementaciju iz ys.
     const auto zs = std::move(ys);
 
-    std::cout << "XS: " << xs << std::endl;
     std::cout << "YS: " << ys << std::endl;
     std::cout << "ZS: " << zs << std::endl;
+
+    // Naredni fragment koda kreira dve prazne liste, as i bs,
+    // a zatim poziva operatore dodeljivanja sa semantikom kopiranja i pomeranja
+    // radi testiranja njihove implementacije.
+    matf::list as, bs;
+    
+    // Lista as treba da ima iste elemente kao xs
+    std::cout << "Kopiramo podatke iz xs u as operatorom dodeljivanja..." << std::endl;
+    as = xs;
+    std::cout << "XS: " << xs << std::endl;
+    std::cout << "AS: " << as << std::endl;
+    
+    // Lista bs treba da "ukrade" elemente iz liste xs
+    std::cout << "Pomeramo podatke iz xs u bs operatorom dodeljivanja..." << std::endl;
+    bs = std::move(xs);
+    std::cout << "XS: " << xs << std::endl;
+    std::cout << "BS: " << bs << std::endl;
 
     return 0;
 }
