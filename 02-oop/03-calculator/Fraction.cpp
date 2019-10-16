@@ -82,7 +82,10 @@ Fraction::operator double() const
 
 Fraction::operator QString() const
 {
-    return QString(QString::number(m_numerator) + "/" + QString::number(m_denominator));
+    return
+        QString::number(m_numerator)
+        + "/"
+        + QString::number(m_denominator);
 }
 
 // Operatori za jednakost i nejednakost.
