@@ -46,7 +46,6 @@ void fill(ForwardIterator first, ForwardIterator last, const T& value)
 template <typename T>
 const T& clamp(const T& v, const T& low, const T& high)
 {
-    return (v < low) ? low : (high < v) ? high : v;
 }
 // Nakon sto resite, odgovorite na sledece:
 // Da li je bolje (1) ili (2)? Zasto?
