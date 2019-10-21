@@ -68,6 +68,6 @@ private:
 };
 
 std::ostream& operator<<(std::ostream& out, const Fraction& value);
-std::istream& operator>>(std::istream& in, const Fraction& value);
+std::istream& operator>>(std::istream& in, Fraction& value);
 
 #endif
