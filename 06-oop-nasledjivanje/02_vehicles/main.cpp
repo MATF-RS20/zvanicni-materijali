@@ -15,6 +15,7 @@ public:
     //   mora postojati makar jedna implementacija apstraktnog metoda.
     // Na primer, na putu `Vehicle` -> `VehicleWithWindow` -> `Car`,
     // apstraktni metod `Type()` je implementiran u klasi `Car`.
+    // Metodi koji su virtualni i apstraktni se nazivaju "cisto virtualni" (engl. pure virtual).
     virtual std::string Type() const = 0;
 
     // Zasto kreiramo metod koji vraca pokazivac na kopiju objekta?
