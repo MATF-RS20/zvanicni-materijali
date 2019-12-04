@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<student>
+    <name>Pera</name>
+    <surname>Perovic</surname>
+    <id>12/1234</id>
+    <jmbg>121212121212</jmbg>
+    <enrolled>1</enrolled>
+    <exams>
+        <exam>RS</exam>
+        <exam>VI</exam>
+    </exams>
+</student>

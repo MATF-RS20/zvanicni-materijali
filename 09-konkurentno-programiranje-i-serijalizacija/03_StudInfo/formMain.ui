@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FormMain</class>
+ <widget class="QWidget" name="FormMain">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>570</width>
+    <height>520</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="buttonOpen">
+       <property name="text">
+        <string>Učitaj iz fajla</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="buttonSave">
+       <property name="text">
+        <string>Sačuvaj u fajl</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="buttonExit">
+       <property name="text">
+        <string>Izađi</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="Line" name="line">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QFormLayout" name="formLayout">
+     <item row="0" column="0">
+      <widget class="QLabel" name="labelName">
+       <property name="text">
+        <string>Ime</string>
+       </property>
+       <property name="buddy">
+        <cstring>textName</cstring>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="textName"/>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="labelSurname">
+       <property name="text">
+        <string>Prezime</string>
+       </property>
+       <property name="buddy">
+        <cstring>textSurname</cstring>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="textSurname"/>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="labelID">
+       <property name="text">
+        <string>Broj indeksa</string>
+       </property>
+       <property name="buddy">
+        <cstring>textID</cstring>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="textID"/>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="labelJMBG">
+       <property name="text">
+        <string>JMBG</string>
+       </property>
+       <property name="buddy">
+        <cstring>textJMBG</cstring>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QLineEdit" name="textJMBG"/>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <widget class="QRadioButton" name="radioEnrolled">
+       <property name="text">
+        <string>Upisan</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="radioNotEnrolled">
+       <property name="text">
+        <string>Nije upisan</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string>Prijavljeni ispiti</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QListWidget" name="listExams"/>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QPushButton" name="buttonAddExam">
+          <property name="text">
+           <string>Dodaj</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="buttonRemoveExam">
+          <property name="text">
+           <string>Izbriši</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QPushButton" name="buttonClearExams">
+          <property name="text">
+           <string>Izbriši sve</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>buttonOpen</tabstop>
+  <tabstop>buttonSave</tabstop>
+  <tabstop>buttonExit</tabstop>
+  <tabstop>textName</tabstop>
+  <tabstop>textSurname</tabstop>
+  <tabstop>textID</tabstop>
+  <tabstop>textJMBG</tabstop>
+  <tabstop>radioEnrolled</tabstop>
+  <tabstop>radioNotEnrolled</tabstop>
+  <tabstop>listExams</tabstop>
+  <tabstop>buttonAddExam</tabstop>
+  <tabstop>buttonRemoveExam</tabstop>
+  <tabstop>buttonClearExams</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonExit</sender>
+   <signal>clicked()</signal>
+   <receiver>FormMain</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>518</x>
+     <y>22</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>448</x>
+     <y>2</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioEnrolled</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>groupBox</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>49</x>
+     <y>191</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>47</x>
+     <y>212</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
