@@ -9,17 +9,31 @@
     - [Nemanja Mićović](http://poincare.matf.bg.ac.rs/~nemanja_micovic)
     - [Nikola Ajzenhamer](http://poincare.matf.bg.ac.rs/~nikola_ajzenhamer/)
 
-## Plan vežbi
-1. Uvod u C++
-1. OOP u jeziku C++, UML dijagrami klasa, Qt5
-1. Memorijski model objeakta na hip memoriji
-1. Generičke funkcije
-1. Algoritmi standardne biblioteke
-1. Nasleđivanje, višestruko nasleđivanje, enumi, operatori
-1. Funkcionalno programiranje u jeziku C++
-1. Qt5 grafička scena, testiranje programa, bibliteka `catch2`
-1. Programiranje višenitnih aplikacija pomoću biblioteke Qt5, serijalizacija i desirijalizacija podataka
-1. Odabrane teme iz jezika C++
+## Plan vežbi po temama
+
+Gradivo za kolokvijum:
+
+1. Uvod u C++. Strukture podataka u standardnoj biblioteci.
+1. OOP u jeziku C++. UML dijagrami klasa.
+1. Memorijski model objekata na hip memoriji.
+1. Generičke funkcije.
+1. Algoritmi standardne biblioteke.
+1. Nasleđivanje, višestruko nasleđivanje, enumi, operatori.
+
+Gradivo za ispit:
+
+{:start="7"}
+1. Biblioteka Qt5 za kreiranje grafičkih korisničkih interfejsa.
+1. Funkcionalno programiranje u jeziku C++.
+1. Testiranje programa. Biblioteka `Catch2`.
+1. Programiranje višenitnih aplikacija pomoću biblioteke Qt5. 
+1. Serijalizacija i deserijalizacija podataka pomoću biblioteke Qt5.
+
+Dodatne teme koje se ne proveravaju na testovima:
+
+{:start="12"}
+1. Qt5 grafička scena.
+1. Odabrane teme iz C++17.
 
 ## Bodovanje
 - Predispitne obaveze
@@ -34,6 +48,7 @@
         - 15 poena
 
 ## Projekti
+
 - Implementacioni jezik: C++
 - Nisu dozvoljene baze podataka
 - Timovi su od 3 člana
@@ -47,12 +62,16 @@
     - Ima svoj nalog na servisu `GitHub`
     - Zna osnove korišćenja sistema `git`
     - Zna osnove korišćenja servisa `GitHub`
+
 ### Repozitorijum
+
 - Za svaki tim će biti kreiran GitHub repozitorijum na kojem će biti verzionisan izvorni kod
 - Svi projekti moraju biti završeni i odbranjeni do početka prvog ispitnog roka
 
 ### Izveštaji
+
 - Na nedeljnom nivou
+- Nose određen broj poena na projektu
 - Objavljuju se na Wiki stranici GitHub repozitorijuma
 - Svaki izveštaj mora da sadrži sledeće podatke:
     - Informacije o tome šta je urađeno tokom prethodne sedmice
@@ -60,6 +79,7 @@
     - Snimak ekrana trenutnog stanja programa
 
 ## Očekivanja od studenata
+
 - Samostalno istraživanje i redovno učenje
     - Preporučeni delovi iz literature i članci
     - Domaći zadaci
@@ -72,4 +92,3 @@
     - Student se prijavljuje na anketu **samo ako sa velikom verovatnoćom** izlazi na proveru znanja
     - U slučaju da se student prijavi na anketu, a u međuvremenu ipak odustane, OBAVEZNO je javiti se asistentu putem mejla
     - Ovime nam drastično olakšavate organizaciju ispita
-
