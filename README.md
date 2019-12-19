@@ -22,7 +22,6 @@ Gradivo za kolokvijum:
 
 Gradivo za ispit:
 
-{:start="7"}
 1. Biblioteka Qt5 za kreiranje grafičkih korisničkih interfejsa.
 1. Funkcionalno programiranje u jeziku C++.
 1. Testiranje programa. Biblioteka `Catch2`.
@@ -31,7 +30,6 @@ Gradivo za ispit:
 
 Dodatne teme koje se ne proveravaju na testovima:
 
-{:start="12"}
 1. Qt5 grafička scena.
 1. Odabrane teme iz C++17.
 
