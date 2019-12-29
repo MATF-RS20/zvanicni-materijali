@@ -345,3 +345,4 @@ TSWLatexianTemp*
 .vscode/
 .vs/
 CppProperties.json
+.idea/

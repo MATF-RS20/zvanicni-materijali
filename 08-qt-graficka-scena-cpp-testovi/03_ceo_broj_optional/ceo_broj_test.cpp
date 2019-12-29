@@ -5,6 +5,73 @@
 
 #include "ceo_broj.h"
 
+TEST_CASE("When two integers are created using the same values Then they need to be equal", "[equality]")
+{
+    // Testove u jednom skupu mozemo podeliti u sekcije
+    SECTION("Base-10 tests")
+    {
+        // Arrange
+        const auto value = 1000;
+        const auto base = 10;
+
+        // Act
+        ceo_broj num1(value, base);
+        ceo_broj num2(value, base);
+
+        // Assert
+        REQUIRE(num1 == num2);
+    }
+
+    SECTION("Base-16 tests")
+    {
+        // Arrange
+        const auto value = 1000;
+        const auto base = 16;
+
+        // Act
+        ceo_broj num1(value, base);
+        ceo_broj num2(value, base);
+
+        // Assert
+        REQUIRE(num1 == num2);
+    }
+}
+
+TEST_CASE("When two integers are created using the different values Then they need to be different", "[inequality]")
+{
+    SECTION("Base-10 tests")
+    {
+        // Arrange
+        const auto value1 = 42;
+        const auto value2 = 0;
+        const auto base = 10;
+
+        // Act
+        ceo_broj num1(value1, base);
+        ceo_broj num2(value2, base);
+
+        // Assert
+        CHECK_FALSE(value1 == value2);
+        REQUIRE_FALSE(num1 == num2);
+    }
+
+    SECTION("Base-16 tests")
+    {
+        // Arrange
+        const auto value1 = 42;
+        const auto value2 = 0;
+        const auto base = 16;
+
+        // Act
+        ceo_broj num1(value1, base);
+        ceo_broj num2(value2, base);
+
+        // Assert
+        CHECK_FALSE(value1 == value2);
+        REQUIRE_FALSE(num1 == num2);
+    }
+}
+
 TEST_CASE("When base is too large Then construction will throw", "[constructor]")
 {
     REQUIRE_THROWS(ceo_broj(0, 1000));
@@ -15,31 +82,30 @@ TEST_CASE("When base is too large Then construction will throw std::invalid_argu
     REQUIRE_THROWS_AS(ceo_broj(0, 1000), std::invalid_argument);
 }
 
-TEST_CASE("When two integers are created using the same values Then they need to be equal", "[equality]")
-{
-    SECTION("Base-10 tests")
-    {
-        CHECK(ceo_broj(1000, 10) == ceo_broj(1000, 10));
-        CHECK(ceo_broj(0, 10) == ceo_broj(0, 10));
-        REQUIRE_FALSE(ceo_broj(1, 10) == ceo_broj(0, 10));
-    }
-
-    SECTION("Base-16 tests")
-    {
-        CHECK(ceo_broj(1000, 16) == ceo_broj(1000, 16));
-        CHECK(ceo_broj(0, 16) == ceo_broj(0, 16));
-        REQUIRE_FALSE(ceo_broj(1, 16) == ceo_broj(0, 16));
-    }
-}
+// Novi testovi u odnosu na prethodni primer zbog promene u implementaciji
 
 TEST_CASE("Should succeed When converted from valid string and base", "[conversion]")
 {
-    CHECK(ceo_broj::iz_niske("1000"));
-    REQUIRE(ceo_broj::iz_niske("ABCD", 16));
+    // Arrange
+    const auto string = "ABCD";
+    const auto base = 16;
+
+    // Act
+    const auto num = ceo_broj::iz_niske(string, base);
+
+    // Assert
+    REQUIRE(num);
 }
 
 TEST_CASE("Should fail When converted from non-valid base", "[conversion]")
 {
-    REQUIRE_FALSE(ceo_broj::iz_niske("ABCD"));
+    // Arrange
+    const auto string = "ABCD";
+
+    // Act
+    const auto num = ceo_broj::iz_niske(string);
+
+    // Assert
+    REQUIRE_FALSE(num);
 }
 
