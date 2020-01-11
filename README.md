@@ -32,6 +32,7 @@ Dodatne teme koje se ne proveravaju na testovima:
 
 1. Qt5 grafička scena.
 1. Odabrane teme iz C++17.
+1. CMake sistem za prevođenje C++ projekata.
 
 ## Bodovanje
 - Predispitne obaveze
