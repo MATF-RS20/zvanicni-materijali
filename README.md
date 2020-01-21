@@ -20,7 +20,7 @@ Gradivo za kolokvijum:
 1. Algoritmi standardne biblioteke.
 1. Nasleđivanje, višestruko nasleđivanje, enumi, operatori.
 
-Gradivo za ispit:
+Gradivo za ispit (podrazumeva se poznavanje gradiva sa kolokvijuma):
 
 1. Biblioteka Qt5 za kreiranje grafičkih korisničkih interfejsa.
 1. Funkcionalno programiranje u jeziku C++.
