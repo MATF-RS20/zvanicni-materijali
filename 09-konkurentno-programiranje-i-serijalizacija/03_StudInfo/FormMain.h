@@ -1,14 +1,14 @@
 #ifndef FORM_MAIN_H_
 #define FORM_MAIN_H_
 
-#include <QFrame>
+#include <QWidget>
 #include "ui_formMain.h"
 #include "DataAccess.h"
 
 /**
  * Glavna forma projekta
  */
-class FormMain: public QFrame
+class FormMain: public QWidget
 {
     Q_OBJECT
 
