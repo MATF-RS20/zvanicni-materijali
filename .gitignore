@@ -346,3 +346,6 @@ TSWLatexianTemp*
 .vs/
 CppProperties.json
 .idea/
+
+# Mac OS X
+._*
