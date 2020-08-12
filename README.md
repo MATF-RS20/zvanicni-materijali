@@ -28,6 +28,8 @@ Gradivo za ispit (podrazumeva se poznavanje gradiva sa kolokvijuma):
 1. Programiranje višenitnih aplikacija pomoću biblioteke Qt5. 
 1. Serijalizacija i deserijalizacija podataka pomoću biblioteke Qt5.
 
+- [Zadaci za vežbanje gradiva za ispit](https://www.overleaf.com/read/fhgnxmjjdxdt). Ovi zadaci služe isključivo za vežbanje gradiva sa časova vežbi. Ne pretpostaviti da će obim ili forma zadataka odgovarati zadacima na ispitu.
+
 Dodatne teme koje se ne proveravaju na testovima:
 
 1. Qt5 grafička scena.
